@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 let formComunicante = document.getElementById("formComunicante");
 
 formComunicante.addEventListener("submit", (e) => {
@@ -18,7 +16,41 @@ formComunicante.addEventListener("submit", (e) => {
         telefone: formData.get('telefone'),
         naturalidade: formData.get('naturalidade'),
         datanasc: formData.get('data_nasc_comunicante'),
-        idade: formData.get('idade_comunicante')
+        idade: formData.get('idade_comunicante'),
+        dadosDoRegistro: {
+            datahorainicio: formData.get('dataHoraIninio'),
+            datahorafim: formData.get('dataHoraFim'),
+            delegado: formData.get('delegado'),
+        },
+        ocorrencia: {
+            unidadeapuracao: formData.get('unidade_de_apuracao'),
+            datahoraini_ocorrencia: formData.get('data_hr_ini_ocorrencia'),
+            datahorafim_ocorrencia: formData.get('data_hr_fim_ocorrencia'),
+            municipio: formData.get('municipio'),
+            bairro: formData.get('bairro'),
+            logradouro: formData.get('logradouro'),
+            complemento: formData.get('complemento'),
+            tipodolocal: formData.get('tipo_local'),
+            descricaolocal: formData.get('descricao_local'),
+        },
+        objeto: {
+            grupo: formData.get(''),
+            tipodocumento: formData.get(''),
+            subgrupo: formData.get(''),
+            descricao: formData.get(''),
+            situacao: formData.get(''),
+            docadulterado: formData.get(''),
+        },
+        envolvidos: {
+            nomecivil_envolvidos: formData.get(''),
+            nacionalidade_envolvidos: formData.get(''),
+            estadocivil_envolvidos: formData.get(''),
+            nomemae_envolvidos: formData.get(''),
+            cpf_envolvidos: formData.get(''),
+            datanasc_envolvidos: formData.get(''),
+            idade_envolvidos: formData.get('')
+        }
+
     }
 
     localStorage.setItem("dadosComunicante", JSON.stringify(dadosComunicante));
